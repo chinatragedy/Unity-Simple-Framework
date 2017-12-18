@@ -54,6 +54,8 @@ public class LoginView : BaseView
 
 	public void OnLoginClick()
 	{
+		Debug.Log("点击Login按钮");
+
 		txtTips.gameObject.SetActive(true);
 		txtTips.text = "登录中...";
 

@@ -17,7 +17,7 @@ public class LoginProxy : Proxy, IProxy
 		//与服务器通讯，返回消息处理玩之后，如果需要改变试图则调用下面消息
 		if (data.Name.Equals("tom") && data.Pwd == 123456)
 		{
-			Debug.Log("Model请求登录 SendLoginMsg");
+			Debug.Log("LoginProxy->SendLoginMsg,Model请求登录");
 
 			UserInfoOV uData = new UserInfoOV("Jack", 20);
 
@@ -32,7 +32,7 @@ public class LoginProxy : Proxy, IProxy
 	//登录返回
 	private void LoginCallBack(UserInfoOV data) //正规是用Json
 	{
-		Debug.Log("Model登录返回 LoginCallBack");
+		Debug.Log("LoginProxy->LoginCallBack,Model登录回调");
 		Facade.SendNotification(NotiConst.V_LoginResult, data);
 	}
 }

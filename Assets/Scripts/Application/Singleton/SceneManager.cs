@@ -32,8 +32,6 @@ public class SceneManager : Singleton<SceneManager>
 
     void OnSceneWasLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("OnScnenWasLoaded:" + scene.name);
-
         PureMVC.Patterns.Facade.Instance.SendNotification(NotiConst.E_EnterScene, scene);
     }
 }

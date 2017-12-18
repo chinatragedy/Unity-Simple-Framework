@@ -9,7 +9,7 @@ public class LoginCommand : SimpleCommand
 {
 	public override void Execute(INotification noti)
 	{
-		Debug.Log("LoginCommand 执行 Execute");
+		Debug.Log("LoginCommand->Execute,处理'E_LOGIN'消息");
 
 		switch (noti.Name)
 		{

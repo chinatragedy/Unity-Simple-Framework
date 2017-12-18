@@ -38,11 +38,13 @@ public class AppFacade : Facade
 
 	protected override void InitializeModel()
 	{
+		Debug.Log("初始化Model");
 		base.InitializeModel();
 	}
 
 	protected override void InitializeView()
 	{
+		Debug.Log("初始化View");
 		base.InitializeView();
 
 		RegisterMediator(new LoginMediator());
@@ -53,8 +55,10 @@ public class AppFacade : Facade
 	/// </summary>
 	protected override void InitializeController()
 	{
+		Debug.Log("初始化Controller");
 		base.InitializeController();
 
+		Debug.Log(" └--注册StartupCommand");
 		RegisterCommand(NotiConst.E_Startup, typeof(StartupCommand));
 
 		RegisterCommand(NotiConst.E_EnterApp, typeof(EnterAppCommand));
@@ -75,7 +79,9 @@ public class AppFacade : Facade
 	/// <param name="app"></param>
 	public void Startup()
 	{
+		Debug.Log("发送'Startup'消息");
 		SendNotification(NotiConst.E_Startup);
+		Debug.Log("取消注册'StartupCommand'消息");
 		RemoveCommand(NotiConst.E_Startup);
 	}
 

@@ -41,10 +41,10 @@ public class LoginMediator : Mediator, IMediator
 		switch (notification.Name)
 		{
 			case NotiConst.V_LoginResult:
+
+				UnityEngine.Debug.Log("LoginMediator->HandleNotification,处理'V_LoginResult'消息");
 				LoginView.txtTips.text = "Login Success!";
 				UserInfoOV info = (UserInfoOV)notification.Body;
-				UnityEngine.Debug.Log("登陆成功，欢迎你：" + info.Id);
-
 				BaseView.HideView<LoginView>();
 				SceneManager.Instance.LoadScene(AppConst.Game);
 				break;
@@ -71,6 +71,7 @@ public class LoginMediator : Mediator, IMediator
 
 		LoginView.login_Request += (data) =>
 		{
+			UnityEngine.Debug.Log("发送'E_LOGIN'消息");
 			Facade.SendNotification(NotiConst.E_LOGIN, data);
 		};
 

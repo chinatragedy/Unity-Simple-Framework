@@ -7,11 +7,14 @@ public class StartupCommand : MacroCommand, ICommand
 {
 	public override void Execute(INotification note)
 	{
-		Debug.Log("@zjh StartupCommand");
+		Debug.Log("StartupCommand执行Execute");
+
+		Debug.Log(" └-设置相机、UI、单例");
 		SetupSingleton();
 		SetupCamera();
 		SetupUIRoot();
 
+		Debug.Log(" └-开始加载Main场景");
 		SceneManager.Instance.LoadScene(AppConst.Main);
 	}
 

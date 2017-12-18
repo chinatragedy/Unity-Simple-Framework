@@ -5,7 +5,7 @@ public static class AppConst
 	/// <summary>
 	/// 应用包名
 	/// </summary>
-	public const string PackageName = "com.cmcm.talkingTest";
+	public const string PackageName = "com.me.how";
 	#region settings
 	/// <summary>
 	/// 设置标准分辨率为1334 x 750(iPhone7分辨率)
